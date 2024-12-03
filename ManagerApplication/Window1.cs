@@ -14,15 +14,19 @@ namespace ManagerApplication
 
         private void Window1_Load(object sender, EventArgs e)
         {
-            LoadOrg();
+            LoadData();
 
         }
 
-        private void LoadOrg()
+        private void LoadData()
         {
             OrgControl orgControl = new OrgControl();
             var organizations = orgControl.GetAllOrganizations();
-            //Organization.DataSource = organizations;
+            Organization.DataSource = organizations;
+
+            StaffControl staffControl = new StaffControl(); 
+            var staffs = staffControl.GetAllStaff();
+            Staff.DataSource = staffs;
         }
 
         private void Organization_Click(object sender, EventArgs e)
@@ -31,6 +35,21 @@ namespace ManagerApplication
         }
 
         private void dataGridView1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
