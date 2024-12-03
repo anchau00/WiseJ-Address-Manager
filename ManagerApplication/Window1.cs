@@ -29,27 +29,23 @@ namespace ManagerApplication
             Staff.DataSource = staffs;
         }
 
+        
         private void Organization_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("clicked!");
+        } 
 
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
+        private void Staff_DoubleClick(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_Click_1(object sender, EventArgs e)
+        private void Organization_DoubleClick(object sender, EventArgs e)
         {
-
+            Console.WriteLine("double clicked!");
         }
 
-        private void dataGridView2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Staff_Click(object sender, EventArgs e)
         {
 
         }

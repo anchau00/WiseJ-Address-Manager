@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.Tabs = new Wisej.Web.TabControl();
             this.OrganizationTab = new Wisej.Web.TabPage();
-            this.StaffTab = new Wisej.Web.TabPage();
             this.Organization = new Wisej.Web.DataGridView();
             this.colOrganizationid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colName = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -39,14 +38,15 @@
             this.colZip = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCity = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCountry = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.StaffTab = new Wisej.Web.TabPage();
             this.Staff = new Wisej.Web.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colStaffid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colTitle = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colFirstname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colLastname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPhone = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEmail = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.organizationBindingSource = new Wisej.Web.BindingSource(this.components);
             this.staffBindingSource = new Wisej.Web.BindingSource(this.components);
             this.organizationBindingSource2 = new Wisej.Web.BindingSource(this.components);
@@ -54,8 +54,8 @@
             this.orgControlBindingSource = new Wisej.Web.BindingSource(this.components);
             this.Tabs.SuspendLayout();
             this.OrganizationTab.SuspendLayout();
-            this.StaffTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Organization)).BeginInit();
+            this.StaffTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Staff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
@@ -75,7 +75,6 @@
             this.Tabs.PageInsets = new Wisej.Web.Padding(1, 40, 1, 1);
             this.Tabs.Size = new System.Drawing.Size(1538, 597);
             this.Tabs.TabIndex = 0;
-            this.Tabs.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // OrganizationTab
             // 
@@ -85,18 +84,8 @@
             this.OrganizationTab.Size = new System.Drawing.Size(1536, 556);
             this.OrganizationTab.Text = "Organizations";
             // 
-            // StaffTab
-            // 
-            this.StaffTab.Controls.Add(this.Staff);
-            this.StaffTab.Location = new System.Drawing.Point(1, 40);
-            this.StaffTab.Name = "StaffTab";
-            this.StaffTab.Size = new System.Drawing.Size(1536, 556);
-            this.StaffTab.Text = "Staff";
-            // 
             // Organization
             // 
-            this.Organization.AllowUserToAddRows = true;
-            this.Organization.AllowUserToDeleteRows = true;
             this.Organization.AutoGenerateColumns = false;
             this.Organization.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colOrganizationid,
@@ -107,17 +96,21 @@
             this.colCountry});
             this.Organization.DataSource = this.organizationBindingSource;
             this.Organization.Dock = Wisej.Web.DockStyle.Fill;
+            this.Organization.EditMode = Wisej.Web.DataGridViewEditMode.EditOnKeystroke;
             this.Organization.Location = new System.Drawing.Point(0, 0);
             this.Organization.Name = "Organization";
+            this.Organization.ReadOnly = true;
             this.Organization.Size = new System.Drawing.Size(1536, 556);
             this.Organization.TabIndex = 0;
-            this.Organization.Click += new System.EventHandler(this.dataGridView1_Click_1);
+            this.Organization.Click += new System.EventHandler(this.Organization_Click);
+            this.Organization.DoubleClick += new System.EventHandler(this.Organization_DoubleClick);
             // 
             // colOrganizationid
             // 
             this.colOrganizationid.DataPropertyName = "OrganizationId";
             this.colOrganizationid.HeaderText = "OrganizationId";
             this.colOrganizationid.Name = "colOrganizationid";
+            this.colOrganizationid.ShowInVisibilityMenu = false;
             this.colOrganizationid.ValueType = typeof(int);
             this.colOrganizationid.Width = 150;
             // 
@@ -156,10 +149,16 @@
             this.colCountry.Name = "colCountry";
             this.colCountry.ValueType = typeof(string);
             // 
+            // StaffTab
+            // 
+            this.StaffTab.Controls.Add(this.Staff);
+            this.StaffTab.Location = new System.Drawing.Point(1, 40);
+            this.StaffTab.Name = "StaffTab";
+            this.StaffTab.Size = new System.Drawing.Size(1536, 556);
+            this.StaffTab.Text = "Staff";
+            // 
             // Staff
             // 
-            this.Staff.AllowUserToAddRows = true;
-            this.Staff.AllowUserToDeleteRows = true;
             this.Staff.AutoGenerateColumns = false;
             this.Staff.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colStaffid,
@@ -173,17 +172,11 @@
             this.Staff.Dock = Wisej.Web.DockStyle.Fill;
             this.Staff.Location = new System.Drawing.Point(0, 0);
             this.Staff.Name = "Staff";
+            this.Staff.ReadOnly = true;
             this.Staff.Size = new System.Drawing.Size(1536, 556);
             this.Staff.TabIndex = 1;
-            this.Staff.Click += new System.EventHandler(this.dataGridView2_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "OrganizationId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "OrganizationId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ValueType = typeof(int);
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.Staff.Click += new System.EventHandler(this.Staff_Click);
+            this.Staff.DoubleClick += new System.EventHandler(this.Staff_DoubleClick);
             // 
             // colStaffid
             // 
@@ -227,6 +220,14 @@
             this.colEmail.Name = "colEmail";
             this.colEmail.ValueType = typeof(string);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "OrganizationId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "OrganizationId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ValueType = typeof(int);
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
             // organizationBindingSource
             // 
             this.organizationBindingSource.DataSource = typeof(Organization);
@@ -264,8 +265,8 @@
             this.Load += new System.EventHandler(this.Window1_Load);
             this.Tabs.ResumeLayout(false);
             this.OrganizationTab.ResumeLayout(false);
-            this.StaffTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Organization)).EndInit();
+            this.StaffTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Staff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
