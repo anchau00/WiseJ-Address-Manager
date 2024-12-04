@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Linq;
+using ManagerApplication.Dialogs;
 using Wisej.Web;
 
 namespace ManagerApplication
@@ -32,22 +33,50 @@ namespace ManagerApplication
         
         private void Organization_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("clicked!");
+
         } 
 
-        private void Staff_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Organization_DoubleClick(object sender, EventArgs e)
-        {
-            Console.WriteLine("double clicked!");
-        }
 
         private void Staff_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void OrgEditBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Org Edit Button");
+        }
+
+        private void OrgDelBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Org Delete Button");
+        }
+
+        private void OrgAddBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Org Add Button");
+            
+            if (OrgAddDialog.Execute())
+            {
+                return;
+            }
+        }
+
+        private void StaffAddBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Staff Add Button");
+        }
+
+        private void StaffEditBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Staff Edit Button");
+        }
+
+        private void StaffDelBtn_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Staff Delete Button");
         }
     }
 }

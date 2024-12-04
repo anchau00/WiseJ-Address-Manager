@@ -38,6 +38,7 @@
             this.colZip = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCity = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCountry = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.organizationBindingSource = new Wisej.Web.BindingSource(this.components);
             this.StaffTab = new Wisej.Web.TabPage();
             this.Staff = new Wisej.Web.DataGridView();
             this.colStaffid = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -47,17 +48,26 @@
             this.colPhone = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEmail = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.organizationBindingSource = new Wisej.Web.BindingSource(this.components);
             this.staffBindingSource = new Wisej.Web.BindingSource(this.components);
             this.organizationBindingSource2 = new Wisej.Web.BindingSource(this.components);
             this.organizationBindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.orgControlBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.aspNetPanel1 = new Wisej.Web.AspNetPanel();
+            this.OrgDelBtn = new Wisej.Web.Button();
+            this.OrgEditBtn = new Wisej.Web.Button();
+            this.OrgAddBtn = new Wisej.Web.Button();
+            this.StaffAddBtn = new Wisej.Web.Button();
+            this.StaffEditBtn = new Wisej.Web.Button();
+            this.StaffDelBtn = new Wisej.Web.Button();
+            this.aspNetPanel2 = new Wisej.Web.AspNetPanel();
             this.Tabs.SuspendLayout();
             this.OrganizationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Organization)).BeginInit();
+            this.Organization.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).BeginInit();
             this.StaffTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Staff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).BeginInit();
+            this.Staff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource1)).BeginInit();
@@ -94,6 +104,10 @@
             this.colZip,
             this.colCity,
             this.colCountry});
+            this.Organization.Controls.Add(this.OrgAddBtn);
+            this.Organization.Controls.Add(this.OrgEditBtn);
+            this.Organization.Controls.Add(this.OrgDelBtn);
+            this.Organization.Controls.Add(this.aspNetPanel1);
             this.Organization.DataSource = this.organizationBindingSource;
             this.Organization.Dock = Wisej.Web.DockStyle.Fill;
             this.Organization.EditMode = Wisej.Web.DataGridViewEditMode.EditOnKeystroke;
@@ -102,8 +116,6 @@
             this.Organization.ReadOnly = true;
             this.Organization.Size = new System.Drawing.Size(1536, 556);
             this.Organization.TabIndex = 0;
-            this.Organization.Click += new System.EventHandler(this.Organization_Click);
-            this.Organization.DoubleClick += new System.EventHandler(this.Organization_DoubleClick);
             // 
             // colOrganizationid
             // 
@@ -149,6 +161,10 @@
             this.colCountry.Name = "colCountry";
             this.colCountry.ValueType = typeof(string);
             // 
+            // organizationBindingSource
+            // 
+            this.organizationBindingSource.DataSource = typeof(Organization);
+            // 
             // StaffTab
             // 
             this.StaffTab.Controls.Add(this.Staff);
@@ -168,6 +184,10 @@
             this.colPhone,
             this.colEmail,
             this.dataGridViewTextBoxColumn1});
+            this.Staff.Controls.Add(this.StaffAddBtn);
+            this.Staff.Controls.Add(this.StaffEditBtn);
+            this.Staff.Controls.Add(this.StaffDelBtn);
+            this.Staff.Controls.Add(this.aspNetPanel2);
             this.Staff.DataSource = this.staffBindingSource;
             this.Staff.Dock = Wisej.Web.DockStyle.Fill;
             this.Staff.Location = new System.Drawing.Point(0, 0);
@@ -175,8 +195,6 @@
             this.Staff.ReadOnly = true;
             this.Staff.Size = new System.Drawing.Size(1536, 556);
             this.Staff.TabIndex = 1;
-            this.Staff.Click += new System.EventHandler(this.Staff_Click);
-            this.Staff.DoubleClick += new System.EventHandler(this.Staff_DoubleClick);
             // 
             // colStaffid
             // 
@@ -228,10 +246,6 @@
             this.dataGridViewTextBoxColumn1.ValueType = typeof(int);
             this.dataGridViewTextBoxColumn1.Width = 150;
             // 
-            // organizationBindingSource
-            // 
-            this.organizationBindingSource.DataSource = typeof(Organization);
-            // 
             // staffBindingSource
             // 
             this.staffBindingSource.DataSource = typeof(Staff);
@@ -247,6 +261,93 @@
             // orgControlBindingSource
             // 
             this.orgControlBindingSource.DataSource = typeof(OrgControl);
+            // 
+            // aspNetPanel1
+            // 
+            this.aspNetPanel1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.aspNetPanel1.Location = new System.Drawing.Point(-2, 397);
+            this.aspNetPanel1.Name = "aspNetPanel1";
+            this.aspNetPanel1.ScrollBars = false;
+            this.aspNetPanel1.Size = new System.Drawing.Size(1537, 154);
+            this.aspNetPanel1.TabIndex = 0;
+            this.aspNetPanel1.Text = "aspNetPanel1";
+            //this.aspNetPanel1.Click += new System.EventHandler(this.aspNetPanel1_Click);
+            // 
+            // OrgDelBtn
+            // 
+            this.OrgDelBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.OrgDelBtn.Location = new System.Drawing.Point(878, 446);
+            this.OrgDelBtn.Name = "OrgDelBtn";
+            this.OrgDelBtn.Size = new System.Drawing.Size(115, 56);
+            this.OrgDelBtn.TabIndex = 1;
+            this.OrgDelBtn.Text = "Delete";
+            this.OrgDelBtn.Click += new System.EventHandler(this.OrgDelBtn_Click);
+            // 
+            // OrgEditBtn
+            // 
+            this.OrgEditBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.OrgEditBtn.Location = new System.Drawing.Point(709, 446);
+            this.OrgEditBtn.Name = "OrgEditBtn";
+            this.OrgEditBtn.Size = new System.Drawing.Size(115, 56);
+            this.OrgEditBtn.TabIndex = 2;
+            this.OrgEditBtn.Text = "Edit";
+            this.OrgEditBtn.Click += new System.EventHandler(this.OrgEditBtn_Click);
+            // 
+            // OrgAddBtn
+            // 
+            this.OrgAddBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.OrgAddBtn.Location = new System.Drawing.Point(536, 446);
+            this.OrgAddBtn.Name = "OrgAddBtn";
+            this.OrgAddBtn.Size = new System.Drawing.Size(115, 56);
+            this.OrgAddBtn.TabIndex = 3;
+            this.OrgAddBtn.Text = "Add";
+            this.OrgAddBtn.Click += new System.EventHandler(this.OrgAddBtn_Click);
+            // 
+            // StaffAddBtn
+            // 
+            this.StaffAddBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.StaffAddBtn.Location = new System.Drawing.Point(536, 446);
+            this.StaffAddBtn.Name = "StaffAddBtn";
+            this.StaffAddBtn.Size = new System.Drawing.Size(115, 56);
+            this.StaffAddBtn.TabIndex = 7;
+            this.StaffAddBtn.Text = "Add";
+            this.StaffAddBtn.Click += new System.EventHandler(this.StaffAddBtn_Click);
+            // 
+            // StaffEditBtn
+            // 
+            this.StaffEditBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.StaffEditBtn.Location = new System.Drawing.Point(709, 446);
+            this.StaffEditBtn.Name = "StaffEditBtn";
+            this.StaffEditBtn.Size = new System.Drawing.Size(115, 56);
+            this.StaffEditBtn.TabIndex = 6;
+            this.StaffEditBtn.Text = "Edit";
+            this.StaffEditBtn.Click += new System.EventHandler(this.StaffEditBtn_Click);
+            // 
+            // StaffDelBtn
+            // 
+            this.StaffDelBtn.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.StaffDelBtn.Location = new System.Drawing.Point(878, 446);
+            this.StaffDelBtn.Name = "StaffDelBtn";
+            this.StaffDelBtn.Size = new System.Drawing.Size(115, 56);
+            this.StaffDelBtn.TabIndex = 5;
+            this.StaffDelBtn.Text = "Delete";
+            this.StaffDelBtn.Click += new System.EventHandler(this.StaffDelBtn_Click);
+            // 
+            // aspNetPanel2
+            // 
+            this.aspNetPanel2.Location = new System.Drawing.Point(-2, 397);
+            this.aspNetPanel2.Name = "aspNetPanel2";
+            this.aspNetPanel2.ScrollBars = false;
+            this.aspNetPanel2.Size = new System.Drawing.Size(1537, 154);
+            this.aspNetPanel2.TabIndex = 4;
+            this.aspNetPanel2.Text = "aspNetPanel2";
             // 
             // Window1
             // 
@@ -266,9 +367,11 @@
             this.Tabs.ResumeLayout(false);
             this.OrganizationTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Organization)).EndInit();
+            this.Organization.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).EndInit();
             this.StaffTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Staff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).EndInit();
+            this.Staff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource1)).EndInit();
@@ -301,6 +404,14 @@
         private Wisej.Web.DataGridViewTextBoxColumn colLastname;
         private Wisej.Web.DataGridViewTextBoxColumn colPhone;
         private Wisej.Web.DataGridViewTextBoxColumn colEmail;
+        private Wisej.Web.AspNetPanel aspNetPanel1;
+        private Wisej.Web.Button OrgDelBtn;
+        private Wisej.Web.Button OrgAddBtn;
+        private Wisej.Web.Button OrgEditBtn;
+        private Wisej.Web.Button StaffAddBtn;
+        private Wisej.Web.Button StaffEditBtn;
+        private Wisej.Web.Button StaffDelBtn;
+        private Wisej.Web.AspNetPanel aspNetPanel2;
     }
 }
 
