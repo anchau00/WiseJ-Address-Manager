@@ -42,8 +42,6 @@ namespace ManagerApplication
 
         }
 
-        
-
         private void OrgEditBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Org Edit Button");
@@ -80,16 +78,34 @@ namespace ManagerApplication
         private void StaffAddBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Staff Add Button");
+
+            if (StaffAddDialog.Execute())
+            {
+                LoadData();
+                return;
+            }
         }
 
         private void StaffEditBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Staff Edit Button");
+
+            if (StaffEditDialog.Execute())
+            {
+                LoadData();
+                return;
+            }
         }
 
         private void StaffDelBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Staff Delete Button");
+
+            if (StaffDeleteDialog.Execute())
+            {
+                LoadData();
+                return;
+            }
         }
     }
 }

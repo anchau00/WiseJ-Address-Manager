@@ -195,7 +195,7 @@
             this.Controls.Add(this.panel1);
             this.HeaderBackColor = System.Drawing.Color.FromName("@dark");
             this.Name = "OrgAddDialog";
-            this.Text = "OrgAddDialog";
+            this.Text = "Adding Organization";
             this.Load += new System.EventHandler(this.OrgAddDialog_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

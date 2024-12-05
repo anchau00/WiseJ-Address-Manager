@@ -14,12 +14,12 @@ public class StaffControl{
     }
 
     public void updateStaff(Staff staff){
-         staffServ.addStaff(staff);
+         staffServ.updateStaff(staff);
     }
 
     
-    public void deleteStaff(Staff staff){
-         staffServ.deleteStaff(staff);
+    public void deleteStaff(int id){
+         staffServ.deleteStaff(id);
     }
 
     public List<Staff> GetAllStaff(){

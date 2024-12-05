@@ -16,8 +16,8 @@ public class StaffService {
     }
 
     
-    public void deleteStaff(Staff staff){
-         staffdb.deleteStaff(staff);
+    public void deleteStaff(int id){
+         staffdb.deleteStaff(id);
     }
 
     public List<Staff> GetAllStaff(){

@@ -30,8 +30,6 @@ public class OrgDatabase
         }
     }
 
-    
-    //insert, update, delete, and retrieve data
     public void insertOrg(Organization org) {
     try {
         string sql = @"

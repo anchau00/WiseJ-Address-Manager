@@ -33,7 +33,6 @@ public class StaffDatabase
     }
 
     
-    //insert, update, delete, and retrieve data
 public void insertStaff(Staff staff) {
     try {
         string sql = @"
@@ -83,13 +82,13 @@ public void updateStaff(Staff staff) {
     }
 }
 
-public void deleteStaff(Staff staff) {
+public void deleteStaff(int id) {
     try {
         string sql = @"
             DELETE FROM Staff WHERE StaffId = @StaffId";
 
         using (var cmd = new SQLiteCommand(sql, conn)) {
-            cmd.Parameters.AddWithValue("@StaffId", staff.StaffId);
+            cmd.Parameters.AddWithValue("@StaffId", id);
             cmd.ExecuteNonQuery();
         }
     }
