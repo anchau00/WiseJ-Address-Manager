@@ -60,6 +60,7 @@ namespace ManagerApplication
             
             if (OrgAddDialog.Execute())
             {
+                LoadData();
                 return;
             }
         }

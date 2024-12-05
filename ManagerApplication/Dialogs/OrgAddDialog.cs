@@ -8,7 +8,18 @@ namespace ManagerApplication.Dialogs
 {
     public partial class OrgAddDialog : Form
     {
-        private string currentText = "";
+
+        OrgControl oc = new OrgControl();
+
+        Organization org = new Organization
+        {
+            name = "",
+            street = "",
+            zip = "",
+            city = "",
+            country = "",
+        };
+
         public OrgAddDialog()
         {
             InitializeComponent();
@@ -21,10 +32,32 @@ namespace ManagerApplication.Dialogs
 
         private void OrgNameText_TextChanged(object sender, EventArgs e)
         {
-            currentText = OrgNameText.Text;
+            org.name = OrgNameText.Text;
 
 
         }
+
+        private void OrgStreetText_TextChanged(object sender, EventArgs e)
+        {
+            org.street = OrgStreetText.Text;
+        }
+
+        private void OrgZipText_TextChanged(object sender, EventArgs e)
+        {
+            org.zip = OrgZipText.Text;
+        }
+
+        private void OrgCityText_TextChanged(object sender, EventArgs e)
+        {
+            org.city = OrgCityText.Text;
+        }
+
+        private void OrgCountryText_TextChanged(object sender, EventArgs e)
+        {
+            org.country = OrgCountryText.Text;
+        }
+
+
 
         private void Preset()
         {
@@ -32,7 +65,7 @@ namespace ManagerApplication.Dialogs
             Commands
                 .Register(OkBtn, () =>
                 {
-                    Console.WriteLine(currentText);  // Use the current text when OkBtn is clicked
+                    oc.addOrg(org);  // Use the current text when OkBtn is clicked
                     Close();
                 })
                 .Register(cancelBtn, () => Close());
