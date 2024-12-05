@@ -80,13 +80,13 @@ public void updateOrg(Organization org) {
 }
 
 
-public void deleteOrg(Organization org) {
+public void deleteOrg(int id) {
     try {
         string sql = @"
             DELETE FROM Organizations WHERE OrganizationId = @OrganizationId";
 
         using (var cmd = new SQLiteCommand(sql, conn)) {
-            cmd.Parameters.AddWithValue("@OrganizationId", org.OrganizationId);
+            cmd.Parameters.AddWithValue("@OrganizationId", id);
             cmd.ExecuteNonQuery();
         }
     }

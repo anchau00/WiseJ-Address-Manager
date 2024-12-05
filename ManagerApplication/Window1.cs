@@ -47,11 +47,23 @@ namespace ManagerApplication
         private void OrgEditBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Org Edit Button");
+
+            if (OrgEditDialog.Execute())
+            {
+                LoadData();
+                return;
+            }
         }
 
         private void OrgDelBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Org Delete Button");
+
+            if (OrgDeleteDialog.Execute())
+            {
+                LoadData();
+                return;
+            }
         }
 
         private void OrgAddBtn_Click(object sender, EventArgs e)

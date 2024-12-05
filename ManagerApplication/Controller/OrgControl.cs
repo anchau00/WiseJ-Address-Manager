@@ -16,8 +16,8 @@ public class OrgControl{
         orgServ.updateOrg(org);
     }
 
-    public void deleteOrg(Organization org){
-        orgServ.deleteOrg(org);
+    public void deleteOrg(int id){
+        orgServ.deleteOrg(id);
     }
 
     public List<Organization> GetAllOrganizations(){
